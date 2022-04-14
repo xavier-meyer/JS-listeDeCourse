@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-trierListeDeCourse</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1 class="text-center my-3">Listes de Courses</h1>
+    </header>
+    <section class="row mx-0 my-4 px-0 d-flex justify-content-center">
+        <div class="col-10 col-md-5 d-flex justify-content-center flex-column">
+            <form id="form">
+                <label for="element" class="my-3">Ajouter un élement à la liste:</label>
+                <br>
+                <input type="text" id="element" name="element" size="20" maxlength="15">
+                <button class="btn btn-success mx-2" type="submit">Ajouter</button>   
+            </form>     
+            <br>
+            <span id="avertissement" class="my-3"></span>  
+            <br>  
+            <p>Listes de Courses:</p>
+            <ul id="p-liste" class="blue col-12"></ul>
+        </div>
+        <div class="col-10 col-md-5 offset-md-1 d-flex justify-content-center flex-column">
+        <p class="my-3">Reste à acheter:</p>
+        <ul id="p-resteAchats" class="grey col-12"></ul>
+        <p class="my-3">Déjà à la maison:</p>
+        <ul id="p-aLaMaison" class="grey col-12"></ul>
+    </section>
+    <footer class="my-4">
+        <p class="text-center">Glissez vos articles dans des boites en fonction de vos besoins!</p>
+    </footer>
+    <script src="./app.js" type="text/javascript"></script>
+</body>
+</html>

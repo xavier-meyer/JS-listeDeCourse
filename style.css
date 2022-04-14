@@ -1,0 +1,55 @@
+/*class perso*/
+.blue{
+    background-color: rgb(42, 169, 179);
+}
+
+.grey{
+    background-color: rgb(201, 206, 206);
+}
+/*paragraphe taille*/
+#p-liste{
+    height: 450px;
+    border-radius: 3px;
+}
+#p-resteAchats, #p-aLaMaison{
+    height: 250px;
+    border-radius: 2px;
+}
+
+/*span #avertissement*/
+#avertissement{
+    border: 3px double rgb(190, 156, 81);
+    height: 35px;
+    width: 350px;
+    display: none;
+    border-radius: 3px;
+    color: white;
+    background: orange;
+}
+
+/*drag and drop*/
+.base{
+    height: 80px;
+    width: 80px;
+    top:5px;
+    left:5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.tenu{
+    border:solid 5px #ccc;
+}
+.case{
+    display: inline-block;
+    height: 250px;
+    width: 100%;
+    margin:10px;
+    border: solid 3px black;
+    background-color: rgb(201, 206, 206);
+}
+
+.hovered{
+    border-style: dashed;
+    background-color: rgb(201, 206, 206);
+}
