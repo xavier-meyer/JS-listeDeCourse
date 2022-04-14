@@ -8,6 +8,7 @@ let pListe = document.getElementById("p-liste");
 let pResteAchats = document.getElementById("p-resteAchats");
 let pALaMaison = document.getElementById("p-aLaMaison");
 
+
 //  FCT récuperer la valeur de l'input element
 function recupInput(){
     element = elementInput.value;
@@ -35,16 +36,11 @@ formElements.addEventListener("submit", function(event){
     event.preventDefault();
 
     recupInput();
+    deleteElements();
 })
 
 // FCT envoyer element ds liste de course
 function putElementInList(){
-    let p1 = document.createElement("p");
-    p1.textContent = "liste de courses:";
-    p1.style.margin = "15px";
-    p1.style.fontWeight = "bold";
-    p1.style.color = "white";
-    document.getElementById("p-liste").appendChild(p1);
     let li = document.createElement("li");
     li.textContent = element;
     li.style.listStyleType = "none";
@@ -53,8 +49,12 @@ function putElementInList(){
     li.style.margin = "10px";
     li.style.padding = "15px";
     li.style.color = "black";
+    li.style.position = "relative";
     li.setAttribute("draggable", true);
    document.getElementById("p-liste").appendChild(li);
+   let b = document.createElement("button");
+   li.appendChild(b);
+   b.classList = "croix";
 }
 
 // FCT faire une boucle de taches + écoute d'évènement taches
@@ -108,4 +108,25 @@ function dragDrop(param) {
     this.className = 'case';
     console.log(this);
     this.append(item);
+}
+
+// Fct faire effacer les élements des listes
+
+let buttons = document.getElementsByClassName("croix");
+
+function deleteElements(){
+    for( let i = 0; i < buttons.length; i++){
+       buttons[i].addEventListener("click", function(e){
+            console.log(e.target.parentNode);
+            // 2 options pour supprimer :
+            // 1) via le parent -> removeChild
+            // 2) via un paramètre -> .remove()
+            let li = e.target.parentNode;
+            li.remove();
+            // 2ème méthode
+            // let li = e.target.parentNode;
+            // li.parentNode.removeChild(li);
+        }
+    )}
+
 }
